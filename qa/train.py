@@ -209,7 +209,7 @@ def main():
 
     args.model_dir = model_dir
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path, local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path)
     special_tokens = {'sep_token': '<|sep|>'}
     tokenizer.add_special_tokens(special_tokens)
     tokenizer.save_pretrained(args.model_dir)
@@ -219,7 +219,7 @@ def main():
 
     print(f"n_train:{len(train_loader.loader)}, n_valid:{len(valid_loader.loader)}")
 
-    model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path, local_files_only=True)
+    model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path)
     model.resize_token_embeddings(len(tokenizer))
     model.to(args.device)
 

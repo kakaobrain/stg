@@ -172,7 +172,7 @@ def main():
     print(args.model_dir)
     os.makedirs(args.model_dir, exist_ok=True)
 
-    tokenizer = add_special_tokens(args.model_name_or_path, local_files_only=True)
+    tokenizer = add_special_tokens(args.model_name_or_path)
     tokenizer.save_pretrained(args.model_dir)
     ignore_idx = tokenizer.pad_token_id
 
@@ -180,7 +180,7 @@ def main():
     valid_dataset = SummDataset4Pretrain(tokenizer, domain=args.domain, mode='valid', use_eos=args.use_eos)
     print(len(train_dataset), len(valid_dataset))
 
-    model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path, local_files_only=True)
+    model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path)
     model.resize_token_embeddings(len(tokenizer))
     model.to(args.device)
 
