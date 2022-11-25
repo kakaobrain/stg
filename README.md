@@ -81,7 +81,7 @@
 ## Citation
 
 ```
-@inproceedings{jo-etal-2022-selective,
+@inproceedings{jo-etal-2022-stg,
     title = "Selective Token Generation for Few-shot Natural Language Generation",
     author = "Jo, Daejin and Kwon, Taehwan and Kim, Eun-Sol and Kim, Sungwoong",
     booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",
