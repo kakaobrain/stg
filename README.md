@@ -20,7 +20,7 @@
     > git clone https://github.com/microsoft/MSMARCO-Question-Answering qa/src
     ```
 2. download MSMARCO QA dataset from https://microsoft.github.io/msmarco/
-3. preprocess data by using [sciprt](../notebooks/msmacro_split.ipynb)
+3. preprocess data by using this [script](../notebooks/msmacro_split.ipynb)
 4. change root_dir of [QADataset](./data_loader.py#L278) to the corresponding directory 
 
 #### Summarization
